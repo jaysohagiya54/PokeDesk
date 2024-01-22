@@ -1,12 +1,35 @@
 .App {
   text-align: center;
 }
+.details{
+  margin-top: 2rem;
+}
 .poke{
-  list-style-type: decimal;
+  list-style-type: none;
   padding-bottom: 1rem;
 }
+.list:link { 
+  text-decoration: none; 
+  color:#282c34;
+  list-style-type: none;
+} 
+.list:visited { 
+  text-decoration: none; 
+  color:#282c34;
+  list-style-type: none;
+} 
+.list:hover { 
+  text-decoration: none; 
+  color:#282c34;
+  list-style-type: none;
+} 
+.list:active { 
+  text-decoration: none; 
+  color:#282c34;
+  list-style-type: none;
+}
 .poke1{
-  list-style-type: decimal;
+  list-style-type: none;
   padding-bottom: 1rem;
   display: flex;
   justify-content: center;
@@ -32,7 +55,17 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.pokedetails{
+  padding-top: 3rem;
+  border-radius: 2rem;
+  border-style: dotted;
+  border: #c02424;
+}
+.pokeimg{
+  width: 200px;
+  height: 200px;
+  padding-bottom: 2rem;
+}
 .App-link {
   color: #61dafb;
 }

@@ -1,7 +1,8 @@
 // src/Pokemon.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PokeDetails from './PokeDetails';
+import { Link } from 'react-router-dom';
+
 
 const PokemonList = () => {
   const [pokemonData, setPokemonData] = useState([]);
@@ -25,16 +26,17 @@ const PokemonList = () => {
   const handlePagination = (url) => {
     fetchData(url);
   };
-  const handlepoke = () => {
-      <PokeDetails/>
-  };
 
   return (
     <div>
       <h1>Pokemon List</h1>
-      <ul className='poke'>
+      <ul>
         {pokemonData.map((pokemon) => (
-          <li className="poke1" key={pokemon.name}>{pokemon.name}</li>
+          <li className='poke' key={pokemon.name}>
+            <Link className='list' to={`/pokemon/${pokemon.name}`}>
+              {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+            </Link>
+          </li>
         ))}
       </ul>
       <div>
@@ -44,5 +46,6 @@ const PokemonList = () => {
     </div>
   );
 };
+
 
 export default PokemonList;
