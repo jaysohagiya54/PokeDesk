@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
+
 
 
 const PokemonDetail = () => {
@@ -24,25 +26,26 @@ const PokemonDetail = () => {
 
   return (
     <div className='px-16 py-6'>
-      <h1 className='details font-bold text-lg text-yellow-600 pb-4'>Pokemon Details</h1>
+      <img className='w-[250px] ml-[670px] mb-4' src='https://iili.io/Ja4Lyx9.png'/>
       {pokemonDetails && (
-        <div className='container overflow-x-auto border w-[400px] border-radius-10 rounded-md mt-3 ml-[600px] align-middle'>
-          <h2>{pokemonDetails.name.charAt(0).toUpperCase() + pokemonDetails.name.slice(1)}</h2>
-          <img className='w-[200px]' src={pokemonDetails.sprites.other.home.front_default} alt={pokemonDetails.name} />
-          <p>Base Experience: {pokemonDetails.base_experience}</p>
+        <div className='container overflow-x-auto border-green-800  w-[400px] border-radius-20 rounded-md mt-[100px] ml-[600px] align-middle shadow-lg hover:shadow-2xl'>
+          <h2 className='font-extrabold text-red-400 pt-3 pb-3'>{pokemonDetails.name.charAt(0).toUpperCase() + pokemonDetails.name.slice(1)}</h2>
+          <img className='w-[200px] ml-[100px]' src={pokemonDetails.sprites.other.home.front_default} alt={pokemonDetails.name} />
+          <p className='pt-3 pb-3'>Base Experience: {pokemonDetails.base_experience}</p>
           {/* <p>Stats: {pokemonDetails.map((p) => (
            <li>
              {p.stats[0].stat.name}
            </li>
           ))}</p> */}
-          <p>Height: {pokemonDetails.height}</p>
-          <p>Weight: {pokemonDetails.weight}</p>
+          <p className='pt-3 pb-3'>Height: {pokemonDetails.height}</p>
+          <p className='pt-3 pb-3'>Weight: {pokemonDetails.weight}</p>
           {/* Add more details as needed */}
         </div>
       )}
-      <div className='pt-5'>
-      <Link  to='/'> <button className='bg-yellow-100 w-12 border-gray-300 rounded-sm border-radius-15 font-semibold'>Back</button></Link>
+      <div className='pt-[140px]'>
+      <Link  to='/'> <button className='bg-yellow-100 shadow-lg hover:shadow-2xl w-[50px] border border-yellow-600 border-opacity-45 rounded-md border-radius-[20px] font-semibold'>Back</button></Link>
       </div>
+      <Footer/>
     </div>
   );
 };
