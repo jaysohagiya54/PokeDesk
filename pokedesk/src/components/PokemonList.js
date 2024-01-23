@@ -29,20 +29,26 @@ const PokemonList = () => {
 
   return (
     <div>
-      <h1>Pokemon List</h1>
-      <ul>
+      <h1 className='font-bold text-lg pb-6 pt-4'>Pokemon List</h1>
+      <div className=''>
+      <ul className=''>
         {pokemonData.map((pokemon) => (
-          <li className='poke' key={pokemon.name}>
-            <Link className='list' to={`/pokemon/${pokemon.name}`}>
+          <li className='container' key={pokemon.name}>
+            <Link className='' to={`/pokemon/${pokemon.name}`}>
               {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
             </Link>
-          </li>
+            <img className='w-[90px]'
+      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.url.split('/').slice(-2, -1)[0]}.png`}
+      alt='poke'
+    />          </li>
         ))}
       </ul>
+      </div>
       <div>
         {prevPage && <button onClick={() => handlePagination(prevPage)}>Previous</button>}
         {nextPage && <button onClick={() => handlePagination(nextPage)}>Next</button>}
       </div>
+     
     </div>
   );
 };
